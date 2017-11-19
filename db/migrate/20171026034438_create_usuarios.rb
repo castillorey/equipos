@@ -12,6 +12,6 @@ class CreateUsuarios < ActiveRecord::Migration[5.1]
 end
 class ChangeUsuarios  < ActiveRecord::Migration[5.1]
   def change
-     add_column :usuarios, :eliminado:integer 
+     add_column :usuarios, :eliminado, :integer 
   end
 end

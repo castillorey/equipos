@@ -142,12 +142,12 @@ ActiveRecord::Schema.define(version: 20171121031050) do
 
   create_table "usuarios", force: :cascade do |t|
     t.string "usuario"
+    t.string "password"
     t.integer "idrol"
     t.integer "idestadousuario"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "eliminado", default: 0
-    t.string "password"
   end
 
   create_table "valor_parametros", force: :cascade do |t|
