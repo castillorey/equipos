@@ -1,0 +1,63 @@
+<%= form_with(model: factura, local: true) do |form| %>
+  <% if factura.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(factura.errors.count, "error") %> prohibited this factura from being saved:</h2>
+
+      <ul>
+      <% factura.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field row col-sm-4" >
+    <%= form.label :numFactura %>
+    <%= form.number_field :numFactura, id: :factura_numFactura,class:"form-control" %>
+  </div>
+
+  <div class="field row col-sm-8">
+    <%= form.label :fecha %>
+  </div>
+
+  <div class="field row col-sm-8">
+    <%= form.datetime_select :fecha, id: :factura_fecha,class:"form-control" %>
+  </div>
+
+
+  <div class="field row col-sm-4" >
+    <%= form.label :idProveedor %>
+    <%= form.text_field :idProveedor, id: :factura_idProveedor,class:"form-control" %>
+  </div>
+
+  <div class="field row col-sm-4" >
+    <%= form.label :concepto %>
+    <%= form.text_field :concepto, id: :factura_concepto,class:"form-control" %>
+  </div>
+
+  <div class="field row col-sm-4" >
+    <%= form.label :valor %>
+    <%= form.text_field :valor, id: :factura_valor,class:"form-control" %>
+  </div>
+
+  <div class="field row col-sm-4" >
+    <%= form.label :comentarioFactura %>
+    <%= form.text_field :comentarioFactura, id: :factura_comentarioFactura,class:"form-control" %>
+  </div>
+
+  <div class="field row col-sm-4" >
+    <%= form.label :idEstadoFactura %>
+    <%= form.text_field :idEstadoFactura, id: :factura_idEstadoFactura,class:"form-control" %>
+  </div>
+
+  <div class="field row col-sm-4" hidden>
+    <%= form.label :eliminado %>
+    <%= form.text_field :eliminado, id: :factura_eliminado,class:"form-control" %>
+  </div>
+
+  <div class="actions" >
+    <%= form.submit "Guardar", :class=>"btn btn-success" %>
+    <%= link_to 'Eliminar', factura, :class => "btn btn-danger", method: :delete, data: { confirm: 'Confirme Eliminación?' } %>
+
+  </div>
+<% end %>

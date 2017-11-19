@@ -1,0 +1,45 @@
+<%= form_with(model: rol_opcion_operacione, local: true) do |form| %>
+  <% if rol_opcion_operacione.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(rol_opcion_operacione.errors.count, "error") %> prohibited this rol_opcion_operacione from being saved:</h2>
+
+      <ul>
+      <% rol_opcion_operacione.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+   <div class="form-group row col-sm-4">
+    <%= form.label "Usuario" %>
+    <%= form.number_field :usuario_id, id: :rol_opcion_operacione_usuario_id, class:"form-control" %>
+  </div>
+
+  <div class="form-group row col-sm-4">
+    <%= form.label "rol" %>
+    <%= form.number_field :idrol, id: :rol_opcion_operacione_idrol, class:"form-control"%>
+  </div>
+<div class="form-group row col-sm-4">
+    <%= form.label "Opcion" %>
+    <%= form.number_field :opcione_id, id: :rol_opcion_operacione_opcione_id, class:"form-control"%>
+  </div>
+  <div class="form-group row col-sm-4">
+    <%= form.label "Operación" %>
+    <%= form.number_field :idoperacion, id: :rol_opcion_operacione_idoperacion, class:"form-control" %>
+  </div>
+
+  <div class="form-group row col-sm-4">
+    <%= form.label :eliminado %>
+    <%= form.number_field :eliminado, id: :rol_opcion_operacione_eliminado, class:"form-control"%>
+  </div>
+
+  <div class="form-group row col-sm-4">
+    <%= form.label "Estado" %>
+    <%= form.text_field :estadorolop, id: :rol_opcion_operacione_estadorolop, class:"form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit  "Guardar", :class=>"btn btn-secondary" %>
+    <%= link_to 'Eliminar', rol_opcion_operacione, :class => "btn btn-danger", method: :delete, data: { confirm: 'Confirme Eliminación?' } %>
+  </div>
+<% end %>

@@ -1,0 +1,29 @@
+
+<h4> Información de Factura</h4>
+<hr class="division">
+<div class="container" id="contenido">
+  <%= link_to 'Regresar', facturas_path,class:"btn btn-secondary" %>
+  <%= link_to 'Modificar', edit_factura_path(@factura),class:"btn btn-success" %>
+  <p id="notice"><%= notice %></p>
+
+  <table class="table">
+    <tr>
+      <th>No. factura</th>
+      <th>Fecha</th>
+      <th>Proveedor</th>
+      <th>Concepto</th>
+      <th>Valor</th>
+      <th>Estado</th>
+    </tr>
+    <tr>
+      <td><%= @factura.numFactura %></td>
+      <td><%= @factura.fecha.to_date %></td>
+      <td><%= @facturas[@facturas.index{ |f| f["numFactura"] == @factura.numFactura}]["proveedor"] %></td>
+      <td><%= @factura.concepto %></td>
+      <td><%= number_to_currency(@factura.valor) %></td>
+      <td><%= @facturas[@facturas.index{ |f| f["numFactura"] == @factura.numFactura}]["estado"] %></td>
+    </tr>
+  </table>
+  <hr>
+  <iframe id="consumo_lista" src="/consumo_lista/<%= @factura.id %>" frameborder="0" style="border:0;width:100%;height:600px;" scrolling="yes"></iframe>
+</div>

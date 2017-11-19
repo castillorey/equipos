@@ -1,0 +1,50 @@
+<h4>Consumos</h4>
+<hr class="division">
+
+<%= link_to 'Nuevo', new_consumo_path,class:'btn btn-primary btn-sm' %>
+
+<p id="notice"><%= notice %></p>
+
+<table id="consumo_data" class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th class="text-center">Id</th>
+      <th class="text-center">Equipo</th>
+      <th class="text-center">Fecha</th>
+      <th class="text-center">Valor</th>
+      <th class="text-center">Tipo</th>
+      <th class="text-center">Estado</th>
+      <th class="text-center">Categoria</th>
+      <th class="text-center">Kilometraje</th>
+      <th class="text-center">Cantidad</th>
+      <th class="text-center">Unid. medida</th>
+      <th class="text-center">Rubro</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @consumos.each do |consumo| %>
+      <tr>
+        <td><a class="llaves" href="/consumos/<%= consumo['id'] %>"> <%= consumo["id"] %></a></td>
+        <td><%= consumo["equipo"] %></td>
+        <td><%= consumo["fecha"] %></td>
+        <td><%= consumo["valor"] %></td>
+        <td><%= consumo["tipo"] %></td>
+        <td><%= consumo["estado"] %></td>
+        <td><%= consumo["categoria"] %></td>
+        <td><%= consumo["kilometraje"] %></td>
+        <td><%= consumo["cantidad"] %></td>
+        <td><%= consumo["unidad"] %></td>
+        <td><%= consumo["rubro"] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<script>
+    jQuery.noConflict();
+    jQuery(document).ready(function(){
+        jQuery('#consumo_data').DataTable();
+    });
+
+</script>

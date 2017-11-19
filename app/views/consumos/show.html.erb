@@ -1,0 +1,38 @@
+<h4> Información de Consumo</h4>
+<hr class="division">
+<div id="contenido">
+  <%= link_to 'Regresar', consumos_path,class:"btn btn-secondary" %>
+  <%= link_to 'Modificar', edit_consumo_path(@consumo),class:"btn btn-success" %>
+  <p id="notice"><%= notice %></p>
+
+  <table class="table">
+    <tr>
+      <th class="text-center">Id</th>
+      <th class="text-center">Equipo</th>
+      <th class="text-center">Fecha</th>
+      <th class="text-center">Valor</th>
+      <th class="text-center">Tipo</th>
+      <th class="text-center">Estado</th>
+      <th class="text-center">Categoria</th>
+      <th class="text-center">Kilometraje</th>
+      <th class="text-center">Cantidad</th>
+      <th class="text-center">Unid. medida</th>
+      <th class="text-center">Rubro</th>
+    </tr>
+    <tr>
+      <td><%= @consumo.id %></td>
+      <td><%= @consumo.idEquipo %></td>
+      <td><%= @consumo.fecha.to_date %></td>
+      <td><%= @consumo.valor %></td>
+      <td><%= @consumo.idPersona %></td>
+      <td><%= @consumo.idProveedor %></td>
+      <td><%= @consumo.fecha %></td>
+      <td><%= @consumo.kilometraje %></td>
+      <td><%= @consumo.cant %></td>
+      <td><%= @consumo.idUnidadMedida %></td>
+      <td><%= @consumo.idRubro %></td>
+
+
+    </tr>
+  </table>
+</div>

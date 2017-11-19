@@ -1,0 +1,36 @@
+# == Schema Information
+#
+# Table name: facturas
+#
+#  id                :integer          not null, primary key
+#  numFactura        :integer
+#  fecha             :datetime
+#  concepto          :string
+#  valor             :float
+#  comentarioFactura :string
+#  idEstadoFactura   :integer
+#  eliminado         :binary
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  idProveedor       :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numFactura: 1
+  fecha: 2017-11-17 22:55:52
+  concepto: MyString
+  valor: 1.5
+  comentarioFactura: MyString
+  idEstadoFactura: 
+  eliminado: 
+
+two:
+  numFactura: 1
+  fecha: 2017-11-17 22:55:52
+  concepto: MyString
+  valor: 1.5
+  comentarioFactura: MyString
+  idEstadoFactura: 
+  eliminado: 

@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Rol Opcion Operaciones</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Idrol</th>
+      <th>Idoperacion</th>
+      <th>Eliminado</th>
+      <th>Estadorolop</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @rol_opcion_operaciones.each do |rol_opcion_operacione| %>
+      <tr>
+        <td><%= rol_opcion_operacione.idrol %></td>
+        <td><%= rol_opcion_operacione.idoperacion %></td>
+        <td><%= rol_opcion_operacione.eliminado %></td>
+        <td><%= rol_opcion_operacione.estadorolop %></td>
+        <td><%= link_to 'Show', rol_opcion_operacione %></td>
+        <td><%= link_to 'Edit', edit_rol_opcion_operacione_path(rol_opcion_operacione) %></td>
+        <td><%= link_to 'Destroy', rol_opcion_operacione, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Rol Opcion Operacione', new_rol_opcion_operacione_path %>

@@ -1,0 +1,68 @@
+# == Schema Information
+#
+# Table name: consumos
+#
+#  id                 :integer          not null, primary key
+#  idConsumo          :integer
+#  idEquipo           :integer
+#  idPersona          :integer
+#  idProveedor        :integer
+#  fecha              :datetime
+#  valor              :float
+#  comentario         :string
+#  idTipoConsumo      :integer
+#  idEstadoConsumo    :integer
+#  idCategoriaConsumo :integer
+#  kilometraje        :float
+#  cant               :integer
+#  idUnidadMedida     :integer
+#  idRubro            :integer
+#  numFactura         :integer
+#  idUsuario          :integer
+#  eliminado          :binary
+#  idFacturas         :integer
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idConsumo: 1
+  idEquipo: 1
+  idPersona: 1
+  idProveedor: 1
+  fecha: 2017-11-17 23:06:36
+  valor: 1.5
+  comentario: MyString
+  idTipoConsumo: 1
+  idEstadoConsumo: 1
+  idCategoriaConsumo: 1
+  kilometraje: 1.5
+  cant: 1
+  idUnidadMedida: 1
+  idRubro: 1
+  numFactura: 1
+  idUsuario: 1
+  eliminado: 
+  idFacturas: 1
+
+two:
+  idConsumo: 1
+  idEquipo: 1
+  idPersona: 1
+  idProveedor: 1
+  fecha: 2017-11-17 23:06:36
+  valor: 1.5
+  comentario: MyString
+  idTipoConsumo: 1
+  idEstadoConsumo: 1
+  idCategoriaConsumo: 1
+  kilometraje: 1.5
+  cant: 1
+  idUnidadMedida: 1
+  idRubro: 1
+  numFactura: 1
+  idUsuario: 1
+  eliminado: 
+  idFacturas: 1

@@ -1,0 +1,34 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<h5>Manejo de Usuarios</h5>
+<div class="navbar "> 
+<%= link_to 'Nuevo', new_usuario_path,class:'btn btn-primary btn-sm' %>
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th class="w-5" >Id</th>
+      <th  class="w-50 text-center">Usuario</th>
+      <th class="w-25 text-center">Rol</th>
+      <th class="w-25 text-center">Estado</th>      
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @usuarios.each do |usuario| %>
+      <tr>
+        <td><%= usuario["id"] %> </td>
+       <td><a class="llaves" href="/usuarios/<%= usuario['id'] %>"> <%= usuario["usuario"] %></a></td>   
+       <td><%= usuario["Rol"] %></td>
+       <td><%= usuario["EstadoUsuario"] %></td>
+      
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+</div>
