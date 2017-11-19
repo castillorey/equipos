@@ -2,9 +2,9 @@ class ConsumosController < ApplicationController
   before_action :set_consumo, only: [:show, :edit, :update, :destroy]
 
   include Servicios
+  require "pp"
   # GET /consumos
   # GET /consumos.json
-  require "pp"
 
   def index
     # @consumos = Consumo.all
@@ -36,7 +36,7 @@ class ConsumosController < ApplicationController
   # GET /consumos/1.json
   def show
 
-    @all = Consumo.all
+    @all = Consumo.where("idFacturas = ?",params[:id])
 
     @consumos = @all.map do |c|
       {

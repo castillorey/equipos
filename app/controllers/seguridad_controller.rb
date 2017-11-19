@@ -2,8 +2,12 @@ class SeguridadController < ApplicationController
     skip_before_action :verify_authenticity_token #desactiva el control de autencicidad del la solicitud
  require "pp"
  include Servicios 
- def login 
- 	render  layout: 'application1'  #donde se va a mostrar la vista ( la vista se llama por convencion igual al metodo)
+ def login
+   if !session[:logueado]
+ 	  render  layout: 'application1'  #donde se va a mostrar la vista ( la vista se llama por convencion igual al metodo)
+   else
+     redirect_to "/inicio"
+   end
  end
    
  def autenticar

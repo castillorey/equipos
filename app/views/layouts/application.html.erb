@@ -36,7 +36,8 @@
           </div>
        </div>
        <div class="row">
-             <div class="col-lg-2"> <!-- inicio navegador -->           
+             <div class="col-lg-2"> <!-- inicio navegador -->
+
               <div id="accordion" role="tablist" class="navegador">
                 <div class="card mt-5">
                   <div class="card-header" role="tab" id="headingOne">
@@ -49,18 +50,18 @@
 
                   <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
                     <div class="card-body">
-                       <ul class="nav">
-                       <li>
+                       <ul class="list-group">
+                         <li class="list-group-item">
                             <%= link_to 'Facturas',facturas_path %>
-                        </li>
-                        <li class="nav-item">
-                             <%= link_to 'Vencimientos','#' %>                         
-                        </li>
-                        
-                      </ul>
+                          </li>
+                          <li class="list-group-item">
+                             <%= link_to 'Equipos',equipos_path %>
+                          </li>
+                       </ul>
                     </div>
                   </div>
                 </div>
+
               <div class="card">
                 <div class="card-header" role="tab" id="headingTwo">
                   <h5 class="mb-0">
@@ -75,6 +76,7 @@
                 </div>
               </div>
             </div>
+
             <div class="card">
               <div class="card-header" role="tab" id="headingThree">
                 <h5 class="mb-0">

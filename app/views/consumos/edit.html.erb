@@ -2,5 +2,7 @@
 
 <%= render 'form', consumo: @consumo %>
 
-<%= link_to 'Ver', @consumo, class: "btn btn-info" %> |
-<%= link_to 'Regresar', consumos_path, class:"btn btn-secondary" %>
+<%= link_to 'Eliminar', @consumo, :class => "btn btn-danger", method: :delete, data: { confirm: 'Confirme Eliminación?' } %>
+|
+<%= link_to 'Regresar', @consumo, class:"btn btn-secondary" %>
+

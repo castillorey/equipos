@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171118174011) do
+ActiveRecord::Schema.define(version: 20171119043926) do
+
+  create_table "anexos", force: :cascade do |t|
+    t.integer "idTipoAnexo"
+    t.string "nombreArchivo"
+    t.string "ruta"
+    t.integer "idEstadoAnexo"
+    t.integer "idEntidad"
+    t.integer "idTipoEntidad"
+    t.binary "eliminado"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "consumos", force: :cascade do |t|
     t.integer "idConsumo"

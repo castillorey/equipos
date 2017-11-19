@@ -19,12 +19,12 @@
   <tbody>
     <% @facturas.each do |factura| %>
       <tr>
-        <td><a class="llaves" href="/facturas/<%= factura['numFactura'] %>"><%= factura['numFactura'] %></a></td>
-        <td><%= factura["fecha"]%></td>
-        <td><%= factura["proveedor"] %></td>
-        <td><%= factura["concepto"] %></td>
-        <td><%= number_to_currency(factura["valor"]) %></td>
-        <td><%= factura["estado"] %></td>
+        <td class="text-center"><a class="llaves" href="/facturas/<%= factura['id'] %>"><%= factura['numFactura'] %></a></td>
+        <td class="text-center"><%= factura["fecha"]%></td>
+        <td class="text-center"><%= factura["proveedor"] %></td>
+        <td class="text-center"><%= factura["concepto"] %></td>
+        <td class="text-center"><%= number_to_currency(factura["valor"]) %></td>
+        <td class="text-center"><%= factura["estado"] %></td>
       </tr>
     <% end %>
   </tbody>

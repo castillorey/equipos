@@ -1,0 +1,52 @@
+<%= form_with(model: anexo, local: true) do |form| %>
+  <% if anexo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(anexo.errors.count, "error") %> prohibited this anexo from being saved:</h2>
+
+      <ul>
+      <% anexo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field row col-sm-4">
+    <%= form.label :idTipoAnexo, "Tipo" %>
+    <%= form.number_field :idTipoAnexo, id: :anexo_idTipoAnexo, class:"form-control" %>
+  </div>
+
+  <div class="field row col-sm-4">
+    <%= form.label :nombreArchivo, "Nombre archivo" %>
+    <%= form.text_field :nombreArchivo, id: :anexo_nombreArchivo, class:"form-control" %>
+  </div>
+
+  <div class="field row col-sm-4">
+    <%= form.label :ruta, "Ruta" %>
+    <%= form.text_field :ruta, id: :anexo_ruta, class:"form-control" %>
+  </div>
+
+  <div class="field row col-sm-4">
+    <%= form.label :idEstadoAnexo, "Estado" %>
+    <%= form.number_field :idEstadoAnexo, id: :anexo_idEstadoAnexo, class:"form-control" %>
+  </div>
+
+  <div class="field row col-sm-4">
+    <%= form.label :idEntidad, "Entidad" %>
+    <%= form.number_field :idEntidad, id: :anexo_idEntidad, class:"form-control" %>
+  </div>
+
+  <div class="field row col-sm-4">
+    <%= form.label :idTipoEntidad, "Tipo entidad" %>
+    <%= form.number_field :idTipoEntidad, id: :anexo_idTipoEntidad, class:"form-control" %>
+  </div>
+
+  <div class="field row col-sm-4" hidden>
+    <%= form.label :eliminado %>
+    <%= form.text_field :eliminado, id: :anexo_eliminado, :value => 0 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Guardar", :class=>"btn btn-success"%>
+  </div>
+<% end %>

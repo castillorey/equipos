@@ -1,0 +1,35 @@
+# == Schema Information
+#
+# Table name: anexos
+#
+#  id            :integer          not null, primary key
+#  idTipoAnexo   :integer
+#  nombreArchivo :string
+#  ruta          :string
+#  idEstadoAnexo :integer
+#  idEntidad     :integer
+#  idTipoEntidad :integer
+#  eliminado     :binary
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  idTipoAnexo: 1
+  nombreArchivo: MyString
+  ruta: MyString
+  idEstadoAnexo: 1
+  idEntidad: 1
+  idTipoEntidad: 1
+  eliminado: 
+
+two:
+  idTipoAnexo: 1
+  nombreArchivo: MyString
+  ruta: MyString
+  idEstadoAnexo: 1
+  idEntidad: 1
+  idTipoEntidad: 1
+  eliminado: 

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :anexos
   resources :proveedores
   resources :equipos
   resources :consumos
@@ -15,5 +16,6 @@ Rails.application.routes.draw do
   get '/logout', to:'seguridad#logout'
   get '/valp/:id', to: "valor_parametros#index"
   get '/consumo_lista/:id', to: "consumos#index"
+  get '/anexos_lista', to: "anexos#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

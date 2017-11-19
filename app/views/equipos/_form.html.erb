@@ -11,52 +11,48 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :idEquipo %>
-    <%= form.number_field :idEquipo, id: :equipo_idEquipo %>
+
+  <div class="field row col-sm-4">
+    <%= form.label :placa, "Placa"%>
+    <%= form.text_field :placa, id: :equipo_placa ,class:"form-control"%>
   </div>
 
-  <div class="field">
-    <%= form.label :placa %>
-    <%= form.text_field :placa, id: :equipo_placa %>
+  <div class="field row col-sm-4">
+    <%= form.label :modelo, "Modelo"%>
+    <%= form.text_field :modelo, id: :equipo_modelo ,class:"form-control"%>
   </div>
 
-  <div class="field">
-    <%= form.label :modelo %>
-    <%= form.text_field :modelo, id: :equipo_modelo %>
+  <div class="field row col-sm-4">
+    <%= form.label :serie, "Serie" %>
+    <%= form.text_field :serie, id: :equipo_serie ,class:"form-control"%>
   </div>
 
-  <div class="field">
-    <%= form.label :serie %>
-    <%= form.text_field :serie, id: :equipo_serie %>
+  <div class="field row col-sm-4">
+    <%= form.label :marca, "Marca" %>
+    <%= form.text_field :marca, id: :equipo_marca ,class:"form-control"%>
   </div>
 
-  <div class="field">
-    <%= form.label :marca %>
-    <%= form.text_field :marca, id: :equipo_marca %>
+  <div class="field row col-sm-4">
+    <%= form.label :idEstadoEquipo, "Estado" %>
+    <%= form.number_field :idEstadoEquipo, id: :equipo_idEstadoEquipo ,class:"form-control"%>
   </div>
 
-  <div class="field">
-    <%= form.label :idEstadoEquipo %>
-    <%= form.number_field :idEstadoEquipo, id: :equipo_idEstadoEquipo %>
+  <div class="field row col-sm-4">
+    <%= form.label :idTipoEquipo, "Tipo" %>
+    <%= form.number_field :idTipoEquipo, id: :equipo_idTipoEquipo ,class:"form-control"%>
   </div>
 
-  <div class="field">
-    <%= form.label :idTipoEquipo %>
-    <%= form.number_field :idTipoEquipo, id: :equipo_idTipoEquipo %>
+  <div class="field row col-sm-4">
+    <%= form.label :idArea, "Area" %>
+    <%= form.number_field :idArea, id: :equipo_idArea ,class:"form-control"%>
   </div>
 
-  <div class="field">
-    <%= form.label :idArea %>
-    <%= form.number_field :idArea, id: :equipo_idArea %>
-  </div>
-
-  <div class="field">
+  <div class="field row col-sm-4" hidden>
     <%= form.label :eliminado %>
-    <%= form.text_field :eliminado, id: :equipo_eliminado %>
+    <%= form.text_field :eliminado, id: :equipo_eliminado ,class:"form-control", :value => 0%>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Guardar", :class=>"btn btn-success" %>
   </div>
 <% end %>

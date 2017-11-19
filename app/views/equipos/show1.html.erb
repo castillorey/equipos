@@ -1,0 +1,31 @@
+
+<h4> Información de Factura</h4>
+<hr class="division">
+<div class="container" id="contenido">
+  <%= link_to 'Regresar', equipos_path,class:"btn btn-secondary" %>
+  <%= link_to 'Modificar', edit_equipo_path(@equipo),class:"btn btn-success" %>
+  <p id="notice"><%= notice %></p>
+
+  <table class="table">
+    <tr>
+      <th class="text-center">Id</th>
+      <th class="text-center">Placa</th>
+      <th class="text-center">Modelo</th>
+      <th class="text-center">Serie</th>
+      <th class="text-center">Marca</th>
+      <th class="text-center">Estado</th>
+      <th class="text-center">Tipo</th>
+      <th class="text-center">Area</th>
+    </tr>
+    <tr>
+      <td class="text-center"><%= @equipo.id %></td>
+      <td class="text-center"><%= @equipo.placa %></td>
+      <td class="text-center"><%= @equipo.modelo %></td>
+      <td class="text-center"><%= @equipo.serie %></td>
+      <td class="text-center"><%= @equipo.marca %></td>
+      <td class="text-center"><%= @equipos[@equipos.index{ |e| e["id"] == @equipo.id}]["estado"] %></td>
+      <td class="text-center"><%= @equipos[@equipos.index{ |e| e["id"] == @equipo.id}]["tipo"] %></td>
+      <td class="text-center"><%= @equipos[@equipos.index{ |e| e["id"] == @equipo.id}]["area"] %></td>
+    </tr>
+  </table>
+</div>

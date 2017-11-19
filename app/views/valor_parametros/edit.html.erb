@@ -2,5 +2,6 @@
 
 <%= render 'form', valor_parametro: @valor_parametro %>
 
-<%= link_to 'Ver', @valor_parametro, class: "btn btn-info" %> |
+<%= link_to 'Eliminar', @valor_parametro, :class => "btn btn-danger", method: :delete, data: { confirm: 'Confirme Eliminación?' } %>
+|
 <%= link_to 'Regresar', valor_parametros_path, class: "btn btn-secondary" %>

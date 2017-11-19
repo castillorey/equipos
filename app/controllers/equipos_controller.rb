@@ -1,15 +1,49 @@
 class EquiposController < ApplicationController
   before_action :set_equipo, only: [:show, :edit, :update, :destroy]
 
+  include Servicios
+  require "pp"
   # GET /equipos
   # GET /equipos.json
   def index
-    @equipos = Equipo.all
+    @todosEquipos = Equipo.all
+    #pp @todosEquipos
+
+    @equipos = @todosEquipos.map do |e|
+      {
+          "id"  => e.id,
+          "placa"  => e.placa,
+          "modelo"  => e.modelo,
+          "serie"  => e.serie,
+          "marca"  => e.marca,
+          "estado"  => TraerValorParametro(e.idEstadoEquipo),
+          "tipo"  => TraerValorParametro(e.idTipoEquipo),
+          "area"  => TraerValorParametro(e.idArea)
+
+      }
+    end
+    #pp @equipos
   end
 
   # GET /equipos/1
   # GET /equipos/1.json
   def show
+    @all = Equipo.all
+
+    @equipos = @all.map do |e|
+      {
+          "id"  => e.id,
+          "placa"  => e.placa,
+          "modelo"  => e.modelo,
+          "serie"  => e.serie,
+          "marca"  => e.marca,
+          "estado"  => TraerValorParametro(e.idEstadoEquipo),
+          "tipo"  => TraerValorParametro(e.idTipoEquipo),
+          "area"  => TraerValorParametro(e.idArea)
+      }
+    end
+
+    render "show1"
   end
 
   # GET /equipos/new

@@ -8,20 +8,20 @@
 
   <table class="table">
     <tr>
-      <th>No. factura</th>
-      <th>Fecha</th>
-      <th>Proveedor</th>
-      <th>Concepto</th>
-      <th>Valor</th>
-      <th>Estado</th>
+      <th class="text-center">No. factura</th>
+      <th class="text-center">Fecha</th>
+      <th class="text-center">Proveedor</th>
+      <th class="text-center">Concepto</th>
+      <th class="text-center">Valor</th>
+      <th class="text-center">Estado</th>
     </tr>
     <tr>
-      <td><%= @factura.numFactura %></td>
-      <td><%= @factura.fecha.to_date %></td>
-      <td><%= @facturas[@facturas.index{ |f| f["numFactura"] == @factura.numFactura}]["proveedor"] %></td>
-      <td><%= @factura.concepto %></td>
-      <td><%= number_to_currency(@factura.valor) %></td>
-      <td><%= @facturas[@facturas.index{ |f| f["numFactura"] == @factura.numFactura}]["estado"] %></td>
+      <td class="text-center"><%= @factura.numFactura %></td>
+      <td class="text-center"><%= @factura.fecha.to_date %></td>
+      <td class="text-center"><%= @facturas[@facturas.index{ |f| f["numFactura"] == @factura.numFactura}]["proveedor"] %></td>
+      <td class="text-center"><%= @factura.concepto %></td>
+      <td class="text-center"><%= number_to_currency(@factura.valor) %></td>
+      <td class="text-center"><%= @facturas[@facturas.index{ |f| f["numFactura"] == @factura.numFactura}]["estado"] %></td>
     </tr>
   </table>
   <hr>

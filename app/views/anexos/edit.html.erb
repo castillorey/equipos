@@ -1,0 +1,7 @@
+<h1>Editar Anexo</h1>
+
+<%= render 'form', anexo: @anexo %>
+
+<%= link_to 'Eliminar', @anexo, :class => "btn btn-danger", method: :delete, data: { confirm: 'Confirme Eliminación?' } %>
+|
+<%= link_to 'Regresar', anexos_path, class: "btn btn-secondary" %>

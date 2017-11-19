@@ -12,6 +12,7 @@ class FacturasController < BaseController
 
     @facturas = @todasFacturas.map do |f|
       {
+          "id"            => f.id,
           "numFactura"            => f.numFactura,
           "fecha"       => f.fecha.to_date,
           "proveedor" => TraerProveedor(f.idProveedor),
@@ -30,6 +31,7 @@ class FacturasController < BaseController
 
     @facturas = @all.map do |f|
       {
+          "id"  => f.id,
           "numFactura"  => f.numFactura,
           "fecha"       => f.fecha.to_date,
           "proveedor" => TraerProveedor(f.idProveedor),

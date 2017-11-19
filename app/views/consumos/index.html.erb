@@ -25,17 +25,17 @@
   <tbody>
     <% @consumos.each do |consumo| %>
       <tr>
-        <td><a class="llaves" href="/consumos/<%= consumo['id'] %>"> <%= consumo["id"] %></a></td>
-        <td><%= consumo["equipo"] %></td>
-        <td><%= consumo["fecha"] %></td>
-        <td><%= consumo["valor"] %></td>
-        <td><%= consumo["tipo"] %></td>
-        <td><%= consumo["estado"] %></td>
-        <td><%= consumo["categoria"] %></td>
-        <td><%= consumo["kilometraje"] %></td>
-        <td><%= consumo["cantidad"] %></td>
-        <td><%= consumo["unidad"] %></td>
-        <td><%= consumo["rubro"] %></td>
+        <td class="text-center"><a class="llaves" href="/consumos/<%= consumo['id'] %>"> <%= consumo["id"] %></a></td>
+        <td class="text-center"><%= consumo["equipo"] %></td>
+        <td class="text-center"><%= consumo["fecha"] %></td>
+        <td class="text-center"><%= consumo["valor"] %></td>
+        <td class="text-center"><%= consumo["tipo"] %></td>
+        <td class="text-center"><%= consumo["estado"] %></td>
+        <td class="text-center"><%= consumo["categoria"] %></td>
+        <td class="text-center"><%= consumo["kilometraje"] %></td>
+        <td class="text-center"><%= consumo["cantidad"] %></td>
+        <td class="text-center"><%= consumo["unidad"] %></td>
+        <td class="text-center"><%= consumo["rubro"] %></td>
       </tr>
     <% end %>
   </tbody>

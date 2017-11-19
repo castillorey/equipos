@@ -1,6 +1,7 @@
-<h1>Editing Equipo</h1>
+<h1>Editar Equipo</h1>
 
 <%= render 'form', equipo: @equipo %>
 
-<%= link_to 'Show', @equipo %> |
-<%= link_to 'Back', equipos_path %>
+<%= link_to 'Eliminar', @equipo, :class => "btn btn-danger", method: :delete, data: { confirm: 'Confirme Eliminación?' } %>
+|
+<%= link_to 'Regresar', equipos_path, class: "btn btn-secondary" %>
