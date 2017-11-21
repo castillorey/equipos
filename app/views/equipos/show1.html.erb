@@ -23,9 +23,9 @@
       <td class="text-center"><%= @equipo.modelo %></td>
       <td class="text-center"><%= @equipo.serie %></td>
       <td class="text-center"><%= @equipo.marca %></td>
-      <td class="text-center"><%= @equipos[@equipos.index{ |e| e["id"] == @equipo.id}]["estado"] %></td>
-      <td class="text-center"><%= @equipos[@equipos.index{ |e| e["id"] == @equipo.id}]["tipo"] %></td>
-      <td class="text-center"><%= @equipos[@equipos.index{ |e| e["id"] == @equipo.id}]["area"] %></td>
+      <td class="text-center"><%= @estado %></td>
+      <td class="text-center"><%= @tipo %></td>
+      <td class="text-center"><%= @area %></td>
     </tr>
   </table>
 </div>

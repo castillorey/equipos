@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :personas
   resources :anexos
   resources :proveedores
   resources :equipos

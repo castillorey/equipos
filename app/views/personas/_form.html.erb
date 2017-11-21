@@ -1,0 +1,67 @@
+<%= form_with(model: persona, local: true) do |form| %>
+  <% if persona.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(persona.errors.count, "error") %> prohibited this persona from being saved:</h2>
+
+      <ul>
+      <% persona.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombres %>
+    <%= form.text_field :nombres, id: :persona_nombres %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apellidos %>
+    <%= form.text_field :apellidos, id: :persona_apellidos %>
+  </div>
+
+  <div class="field">
+    <%= form.label :identificacion %>
+    <%= form.text_field :identificacion, id: :persona_identificacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :correo %>
+    <%= form.text_field :correo, id: :persona_correo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :idEstadoPersona %>
+    <%= form.number_field :idEstadoPersona, id: :persona_idEstadoPersona %>
+  </div>
+
+  <div class="field">
+    <%= form.label :idTipoPersona %>
+    <%= form.number_field :idTipoPersona, id: :persona_idTipoPersona %>
+  </div>
+
+  <div class="field">
+    <%= form.label :idArea %>
+    <%= form.number_field :idArea, id: :persona_idArea %>
+  </div>
+
+  <div class="field">
+    <%= form.label :idCargo %>
+    <%= form.number_field :idCargo, id: :persona_idCargo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :idTipoIdentificacion %>
+    <%= form.number_field :idTipoIdentificacion, id: :persona_idTipoIdentificacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :eliminado %>
+    <%= form.text_field :eliminado, id: :persona_eliminado %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

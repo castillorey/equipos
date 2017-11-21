@@ -41,16 +41,23 @@ class FacturasController < BaseController
       }
     end
 
+    @proveedor =  Proveedore.find(@factura.idProveedor).nombre
+    @estado = TraerValorParametro(@factura.idEstadoFactura)
     render "show1"
   end
 
   # GET /facturas/new
   def new
     @factura = Factura.new
+
+    @proveedores =  Proveedore.all
+    @estados = TraerParametros(4)
   end
 
   # GET /facturas/1/edit
   def edit
+    @proveedores =  Proveedore.all
+    @estados = TraerParametros(4)
   end
 
   # POST /facturas

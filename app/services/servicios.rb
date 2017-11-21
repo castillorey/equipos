@@ -9,7 +9,7 @@ module Servicios
 
    def TraerParametros(params)
 	   	unless params.nil?
-		     ValorParametro.where(["parametroId ='#{params}'"]).select(:valor,:id) 
+		     ValorParametro.where(["parametro_id ='#{params}'"]).select(:valor,:id)
 		end 
    end   
 

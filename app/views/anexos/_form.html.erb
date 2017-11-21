@@ -13,7 +13,8 @@
 
   <div class="field row col-sm-4">
     <%= form.label :idTipoAnexo, "Tipo" %>
-    <%= form.number_field :idTipoAnexo, id: :anexo_idTipoAnexo, class:"form-control" %>
+    <% opciones = options_from_collection_for_select(@tipos, "id","valor",@anexo.idTipoAnexo) %>
+    <%= form.select(:idTipoAnexo, opciones,{},{class:"form-control"} ) %>
   </div>
 
   <div class="field row col-sm-4">
@@ -28,17 +29,20 @@
 
   <div class="field row col-sm-4">
     <%= form.label :idEstadoAnexo, "Estado" %>
-    <%= form.number_field :idEstadoAnexo, id: :anexo_idEstadoAnexo, class:"form-control" %>
+    <% opciones = options_from_collection_for_select(@estados, "id","valor",@anexo.idEstadoAnexo) %>
+    <%= form.select(:idEstadoAnexo, opciones,{},{class:"form-control"} ) %>
   </div>
 
   <div class="field row col-sm-4">
     <%= form.label :idEntidad, "Entidad" %>
-    <%= form.number_field :idEntidad, id: :anexo_idEntidad, class:"form-control" %>
+    <% opciones = options_from_collection_for_select(@entidades, "id","valor",@anexo.idEntidad) %>
+    <%= form.select(:idEntidad, opciones,{},{class:"form-control"} ) %>
   </div>
 
   <div class="field row col-sm-4">
     <%= form.label :idTipoEntidad, "Tipo entidad" %>
-    <%= form.number_field :idTipoEntidad, id: :anexo_idTipoEntidad, class:"form-control" %>
+    <% opciones = options_from_collection_for_select(@tipoEntidades, "id","valor",@anexo.idTipoEntidad) %>
+    <%= form.select(:idTipoEntidad, opciones,{},{class:"form-control"} ) %>
   </div>
 
   <div class="field row col-sm-4" hidden>

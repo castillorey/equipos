@@ -54,17 +54,52 @@ class ConsumosController < ApplicationController
       }
     end
 
+    @equipo = Equipo.find(@consumo.idEquipo).placa
+    @persona = Persona.find(@consumo.idPersona).nombres
+    @proveedor = Proveedore.find(@consumo.idProveedor).nombre
+    @tipo = TraerValorParametro(@consumo.idTipoConsumo)
+    @estado = TraerValorParametro(@consumo.idEstadoConsumo)
+    @categoria = TraerValorParametro(@consumo.idCategoriaConsumo)
+    @medida = TraerValorParametro(@consumo.idUnidadMedida)
+    @rubro = TraerValorParametro(@consumo.idRubro)
+    @noFactura = @consumo.numFactura
+    @usuario = Usuario.find(@consumo.idUsuario).usuario
+    @idFactura = Factura.find(@consumo.idFacturas)
+
     render layout: "application1"
   end
 
   # GET /consumos/new
   def new
     @consumo = Consumo.new
+
+    @equipos = Equipo.all
+    @personas = Persona.all
+    @proveedores = Proveedore.all
+    @tipos = TraerParametros(5)
+    @estados = TraerParametros(6)
+    @categorias = TraerParametros(7)
+    @medidas = TraerParametros(8)
+    @rubros = TraerParametros(9)
+    @usuarios = Usuario.all
+    @idFacturas = Factura.all
+
     render layout: "application1"
   end
 
   # GET /consumos/1/edit
   def edit
+    @equipos = Equipo.all
+    @personas = Persona.all
+    @proveedores = Proveedore.all
+    @tipos = TraerParametros(5)
+    @estados = TraerParametros(6)
+    @categorias = TraerParametros(7)
+    @medidas = TraerParametros(8)
+    @rubros = TraerParametros(9)
+    @usuarios = Usuario.all
+    @idFacturas = Factura.all
+
     render layout: "application1"
   end
 

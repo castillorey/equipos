@@ -27,7 +27,8 @@
 
   <div class="field row col-sm-4" >
     <%= form.label :idProveedor, "Proveedor"%>
-    <%= form.text_field :idProveedor, id: :factura_idProveedor,class:"form-control" %>
+    <% opciones = options_from_collection_for_select(@proveedores, "id","nombre",@factura.idProveedor) %>
+    <%= form.select(:idProveedor, opciones,{},{class:"form-control"} ) %>
   </div>
 
   <div class="field row col-sm-4" >
@@ -47,8 +48,10 @@
 
   <div class="field row col-sm-4" >
     <%= form.label :idEstadoFactura, "Estado" %>
-    <%= form.text_field :idEstadoFactura, id: :factura_idEstadoFactura,class:"form-control" %>
+    <% opciones = options_from_collection_for_select(@estados, "id","valor",@factura.idEstadoFactura) %>
+    <%= form.select(:idEstadoFactura, opciones,{},{class:"form-control"} ) %>
   </div>
+    <%= puts @factura.idEstadoFactura %>
 
   <div class="field row col-sm-4" hidden>
     <%= form.label :eliminado %>

@@ -18,10 +18,10 @@
     <tr>
       <td class="text-center"><%= @factura.numFactura %></td>
       <td class="text-center"><%= @factura.fecha.to_date %></td>
-      <td class="text-center"><%= @facturas[@facturas.index{ |f| f["numFactura"] == @factura.numFactura}]["proveedor"] %></td>
+      <td class="text-center"><%= @proveedor %></td>
       <td class="text-center"><%= @factura.concepto %></td>
       <td class="text-center"><%= number_to_currency(@factura.valor) %></td>
-      <td class="text-center"><%= @facturas[@facturas.index{ |f| f["numFactura"] == @factura.numFactura}]["estado"] %></td>
+      <td class="text-center"><%= @estado %></td>
     </tr>
   </table>
   <hr>

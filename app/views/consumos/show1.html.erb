@@ -21,16 +21,16 @@
     </tr>
     <tr>
       <td class="text-center"><%= @consumo.id %></td>
-      <td class="text-center"><%= @consumos[@consumos.index{ |c| c["id"] == @factura.id}]["equipo"] %></td>
+      <td class="text-center"><%= @equipo %></td>
       <td class="text-center"><%= @consumo.fecha.to_date %></td>
       <td class="text-center"><%= @consumo.valor %></td>
-      <td class="text-center"><%= @consumos[@consumos.index{ |c| c["id"] == @factura.id}]["tipo"] %></td>
-      <td class="text-center"><%= @consumos[@consumos.index{ |c| c["id"] == @factura.id}]["estado"] %></td>
-      <td class="text-center"><%= @consumos[@consumos.index{ |c| c["id"] == @factura.id}]["categoria"] %></td>
+      <td class="text-center"><%= @tipo %></td>
+      <td class="text-center"><%= @estado %></td>
+      <td class="text-center"><%= @categoria %></td>
       <td class="text-center"><%= @consumo.kilometraje %></td>
       <td class="text-center"><%= @consumo.cant %></td>
-      <td class="text-center"><%= @consumos[@consumos.index{ |c| c["id"] == @factura.id}]["unidad"] %></td>
-      <td class="text-center"><%= @consumos[@consumos.index{ |c| c["id"] == @factura.id}]["rubro"] %></td>
+      <td class="text-center"><%= @medida %></td>
+      <td class="text-center"><%= @rubro %></td>
 
 
     </tr>

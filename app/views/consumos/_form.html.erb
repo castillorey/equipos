@@ -1,105 +1,110 @@
 <%= form_with(model: consumo, local: true) do |form| %>
-  <% if consumo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(consumo.errors.count, "error") %> prohibited this consumo from being saved:</h2>
+    <% if consumo.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(consumo.errors.count, "error") %> prohibited this consumo from being saved:</h2>
 
-      <ul>
-      <% consumo.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% consumo.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+
+    <div class="form-group row col-sm-4">
+      <%= form.label :idEquipo, "Equipo" %>
+      <% opciones = options_from_collection_for_select(@equipos, "id","placa",@consumo.idEquipo) %>
+      <%= form.select(:idEquipo, opciones,{},{class:"form-control"} ) %>
     </div>
-  <% end %>
 
+    <div class="form-group row col-sm-4">
+      <%= form.label :idPersona, "Persona" %>
+      <% opciones = options_from_collection_for_select(@personas, "id","nombres",@consumo.idPersona) %>
+      <%= form.select(:idPersona, opciones,{},{class:"form-control"} ) %>
+    </div>
 
-  <div class="form-group row col-sm-4">
-    <%= form.label :idEquipo, "Equipo" %>
-    <%= form.number_field :idEquipo, id: :consumo_idEquipo, class:"form-control"%>
-  </div>
+    <div class="form-group row col-sm-4">
+      <%= form.label :idProveedor, "Proveedor" %>
+      <% opciones = options_from_collection_for_select(@proveedores, "id","nombre",@consumo.idProveedor) %>
+      <%= form.select(:idProveedor, opciones,{},{class:"form-control"} ) %>
+    </div>
 
-  <div class="form-group row col-sm-4">
-    <%= form.label :idPersona, "Persona" %>
-    <%= form.number_field :idPersona, id: :consumo_idPersona, class:"form-control"%>
-  </div>
+    <div class="field row col-sm-8">
+      <%= form.label :fecha, "Fecha" %>
+    </div>
 
-  <div class="form-group row col-sm-4">
-    <%= form.label :idProveedor, "Proveedor" %>
-    <%= form.number_field :idProveedor, id: :consumo_idProveedor, class:"form-control"%>
-  </div>
+    <div class="field row col-sm-8">
+      <%= form.datetime_select :fecha, id: :factura_fecha,class:"form-control" %>
+    </div>
 
-  <div class="field row col-sm-8">
-    <%= form.label :fecha, "Fecha" %>
-  </div>
+    <div class="form-group row col-sm-4">
+      <%= form.label :valor, "Valor" %>
+      <%= form.text_field :valor, id: :consumo_valor, class:"form-control" %>
+    </div>
 
-  <div class="field row col-sm-8">
-    <%= form.datetime_select :fecha, id: :factura_fecha,class:"form-control" %>
-  </div>
+    <div class="form-group row col-sm-4">
+      <%= form.label :comentario, "Comentario" %>
+      <%= form.text_field :comentario, id: :consumo_comentario, class:"form-control" %>
+    </div>
 
-  <div class="form-group row col-sm-4">
-    <%= form.label :valor, "Valor" %>
-    <%= form.text_field :valor, id: :consumo_valor, class:"form-control" %>
-  </div>
+    <div class="form-group row col-sm-4">
+      <%= form.label :idTipoConsumo, "Tipo" %>
+      <% opciones = options_from_collection_for_select(@tipos, "id","valor",@consumo.idTipoConsumo) %>
+      <%= form.select(:idTipoConsumo, opciones,{},{class:"form-control"} ) %>
+    </div>
 
-  <div class="form-group row col-sm-4">
-    <%= form.label :comentario, "Comentario" %>
-    <%= form.text_field :comentario, id: :consumo_comentario, class:"form-control" %>
-  </div>
+    <div class="form-group row col-sm-4">
+      <%= form.label :idEstadoConsumo, "Estado" %>
+      <% opciones = options_from_collection_for_select(@estados, "id","valor",@consumo.idEstadoConsumo) %>
+      <%= form.select(:idEstadoConsumo, opciones,{},{class:"form-control"} ) %>
+    </div>
 
-  <div class="form-group row col-sm-4">
-    <%= form.label :idTipoConsumo, "Tipo" %>
-    <%= form.number_field :idTipoConsumo, id: :consumo_idTipoConsumo, class:"form-control" %>
-  </div>
+    <div class="form-group row col-sm-4">
+      <%= form.label :idCategoriaConsumo, "Categoria" %>
+      <% opciones = options_from_collection_for_select(@categorias, "id","valor",@consumo.idCategoriaConsumo) %>
+      <%= form.select(:idCategoriaConsumo, opciones,{},{class:"form-control"} ) %>  </div>
 
-  <div class="form-group row col-sm-4">
-    <%= form.label :idEstadoConsumo, "Estado" %>
-    <%= form.number_field :idEstadoConsumo, id: :consumo_idEstadoConsumo, class:"form-control" %>
-  </div>
+    <div class="form-group row col-sm-4">
+      <%= form.label :kilometraje, "Kilometraje" %>
+      <%= form.text_field :kilometraje, id: :consumo_kilometraje, class:"form-control" %>
+    </div>
 
-  <div class="form-group row col-sm-4">
-    <%= form.label :idCategoriaConsumo, "Categoria" %>
-    <%= form.number_field :idCategoriaConsumo, id: :consumo_idCategoriaConsumo, class:"form-control" %>
-  </div>
+    <div class="form-group row col-sm-4">
+      <%= form.label :cant, "Cantidad" %>
+      <%= form.number_field :cant, id: :consumo_cant, class:"form-control" %>
+    </div>
 
-  <div class="form-group row col-sm-4">
-    <%= form.label :kilometraje, "Kilometraje" %>
-    <%= form.text_field :kilometraje, id: :consumo_kilometraje, class:"form-control" %>
-  </div>
+    <div class="form-group row col-sm-4">
+      <%= form.label :idUnidadMedida, "Unid. de medida" %>
+      <% opciones = options_from_collection_for_select(@medidas, "id","valor",@consumo.idUnidadMedida) %>
+      <%= form.select(:idUnidadMedida, opciones,{},{class:"form-control"} ) %>  </div>
 
-  <div class="form-group row col-sm-4">
-    <%= form.label :cant, "Cantidad" %>
-    <%= form.number_field :cant, id: :consumo_cant, class:"form-control" %>
-  </div>
+    <div class="form-group row col-sm-4">
+      <%= form.label :idRubro, "Rubro"%>
+      <% opciones = options_from_collection_for_select(@rubros, "id","valor",@consumo.idRubro) %>
+      <%= form.select(:idRubro, opciones,{},{class:"form-control"} ) %>  </div>
 
-  <div class="form-group row col-sm-4">
-    <%= form.label :idUnidadMedida, "Unid. de medida" %>
-    <%= form.number_field :idUnidadMedida, id: :consumo_idUnidadMedida, class:"form-control" %>
-  </div>
+    <div class="form-group row col-sm-4">
+      <%= form.label :numFactura, "No. Factura" %>
+      <%= form.number_field :numFactura, id: :consumo_numFactura, class:"form-control" %>
+    </div>
 
-  <div class="form-group row col-sm-4">
-    <%= form.label :idRubro, "Rubro"%>
-    <%= form.number_field :idRubro, id: :consumo_idRubro, class:"form-control" %>
-  </div>
+    <div class="form-group row col-sm-4">
+      <%= form.label :idUsuario, "Usuario" %>
+      <% opciones = options_from_collection_for_select(@usuarios, "id","usuario",@consumo.idUsuario) %>
+      <%= form.select(:idUsuario, opciones,{},{class:"form-control"} ) %>  </div>  </div>
 
-  <div class="form-group row col-sm-4">
-    <%= form.label :numFactura, "No. Factura" %>
-    <%= form.number_field :numFactura, id: :consumo_numFactura, class:"form-control" %>
-  </div>
+    <div class="form-group row col-sm-4" hidden>
+      <%= form.hidden_field :eliminado, id: :consumo_eliminado, class:"form-control", :value => 0 %>
+    </div>
 
-  <div class="form-group row col-sm-4">
-    <%= form.label :idUsuario, "Usuario" %>
-    <%= form.number_field :idUsuario, id: :consumo_idUsuario, class:"form-control" %>
-  </div>
+    <div class="form-group row col-sm-4" hidden>
+      <%= form.label :idFacturas, "Factura"%>
+      <%= form.hidden_field :idFacturas, id: :consumo_idFacturas, class:"form-control", :value => @idFactura%>
+    </div>
 
-  <div class="form-group row col-sm-4" hidden>
-    <%= form.hidden_field :eliminado, id: :consumo_eliminado, class:"form-control", :value => 0 %>
-  </div>
-
-  <div class="form-group row col-sm-4">
-    <%= form.label :idFacturas, "Factura"%>
-    <%= form.number_field :idFacturas, id: :consumo_idFacturas, class:"form-control"%>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Guardar", :class=>"btn btn-success" %>
-  </div>
+    <div class="actions">
+      <%= form.submit "Guardar", :class=>"btn btn-success" %>
+    </div>
 <% end %>

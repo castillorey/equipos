@@ -43,16 +43,26 @@ class EquiposController < ApplicationController
       }
     end
 
+    @estado = TraerValorParametro(@equipo.idEstadoEquipo)
+    @tipo = TraerValorParametro(@equipo.idTipoEquipo)
+    @area = TraerValorParametro(@equipo.idArea)
     render "show1"
   end
 
   # GET /equipos/new
   def new
     @equipo = Equipo.new
+
+    @estados = TraerParametros(10)
+    @tipos = TraerParametros(11)
+    @areas = TraerParametros(12)
   end
 
   # GET /equipos/1/edit
   def edit
+    @estados = TraerParametros(10)
+    @tipos = TraerParametros(11)
+    @areas = TraerParametros(12)
   end
 
   # POST /equipos

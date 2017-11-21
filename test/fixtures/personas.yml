@@ -1,0 +1,44 @@
+# == Schema Information
+#
+# Table name: personas
+#
+#  id                   :integer          not null, primary key
+#  nombres              :string
+#  apellidos            :string
+#  identificacion       :string
+#  correo               :string
+#  idEstadoPersona      :integer
+#  idTipoPersona        :integer
+#  idArea               :integer
+#  idCargo              :integer
+#  idTipoIdentificacion :integer
+#  eliminado            :binary
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombres: MyString
+  apellidos: MyString
+  identificacion: MyString
+  correo: MyString
+  idEstadoPersona: 1
+  idTipoPersona: 1
+  idArea: 1
+  idCargo: 1
+  idTipoIdentificacion: 1
+  eliminado: 
+
+two:
+  nombres: MyString
+  apellidos: MyString
+  identificacion: MyString
+  correo: MyString
+  idEstadoPersona: 1
+  idTipoPersona: 1
+  idArea: 1
+  idCargo: 1
+  idTipoIdentificacion: 1
+  eliminado: 

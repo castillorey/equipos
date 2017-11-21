@@ -31,12 +31,22 @@ class AnexosController < ApplicationController
   # GET /anexos/1
   # GET /anexos/1.json
   def show
+    @tipo = TraerValorParametro(@anexo.idTipoAnexo)
+    @estado = TraerValorParametro(@anexo.idEstadoAnexo)
+    @entidad = TraerValorParametro(@anexo.idEntidad)
+    @tipoEntidad = TraerValorParametro(@anexo.idTipoEntidad)
+
     render layout: "application1"
   end
 
   # GET /anexos/new
   def new
     @anexo = Anexo.new
+
+    @tipos = TraerParametros(13)
+    @estados = TraerParametros(14)
+    @entidades = TraerParametros(15)
+    @tipoEntidades = TraerParametros(16)
     render layout: "application1"
   end
 

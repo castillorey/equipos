@@ -1,58 +1,61 @@
 <%= form_with(model: equipo, local: true) do |form| %>
-  <% if equipo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(equipo.errors.count, "error") %> prohibited this equipo from being saved:</h2>
+    <% if equipo.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(equipo.errors.count, "error") %> prohibited this equipo from being saved:</h2>
 
-      <ul>
-      <% equipo.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <ul>
+            <% equipo.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+
+    <div class="field row col-sm-4">
+      <%= form.label :placa, "Placa"%>
+      <%= form.text_field :placa, id: :equipo_placa ,class:"form-control"%>
     </div>
-  <% end %>
 
+    <div class="field row col-sm-4">
+      <%= form.label :modelo, "Modelo"%>
+      <%= form.text_field :modelo, id: :equipo_modelo ,class:"form-control"%>
+    </div>
 
-  <div class="field row col-sm-4">
-    <%= form.label :placa, "Placa"%>
-    <%= form.text_field :placa, id: :equipo_placa ,class:"form-control"%>
-  </div>
+    <div class="field row col-sm-4">
+      <%= form.label :serie, "Serie" %>
+      <%= form.text_field :serie, id: :equipo_serie ,class:"form-control"%>
+    </div>
 
-  <div class="field row col-sm-4">
-    <%= form.label :modelo, "Modelo"%>
-    <%= form.text_field :modelo, id: :equipo_modelo ,class:"form-control"%>
-  </div>
+    <div class="field row col-sm-4">
+      <%= form.label :marca, "Marca" %>
+      <%= form.text_field :marca, id: :equipo_marca ,class:"form-control"%>
+    </div>
 
-  <div class="field row col-sm-4">
-    <%= form.label :serie, "Serie" %>
-    <%= form.text_field :serie, id: :equipo_serie ,class:"form-control"%>
-  </div>
+    <div class="field row col-sm-4">
+      <%= form.label :idEstadoEquipo, "Estado" %>
+      <% opciones = options_from_collection_for_select(@estados, "id","valor",@equipo.idEstadoEquipo) %>
+      <%= form.select(:idEstadoEquipo, opciones,{},{class:"form-control"} ) %>
+    </div>
 
-  <div class="field row col-sm-4">
-    <%= form.label :marca, "Marca" %>
-    <%= form.text_field :marca, id: :equipo_marca ,class:"form-control"%>
-  </div>
+    <div class="field row col-sm-4">
+      <%= form.label :idTipoEquipo, "Tipo" %>
+      <% opciones = options_from_collection_for_select(@tipos, "id","valor",@equipo.idTipoEquipo) %>
+      <%= form.select(:idTipoEquipo, opciones,{},{class:"form-control"} ) %>
+    </div>
 
-  <div class="field row col-sm-4">
-    <%= form.label :idEstadoEquipo, "Estado" %>
-    <%= form.number_field :idEstadoEquipo, id: :equipo_idEstadoEquipo ,class:"form-control"%>
-  </div>
+    <div class="field row col-sm-4">
+      <%= form.label :idArea, "Area" %>
+      <% opciones = options_from_collection_for_select(@areas, "id","valor",@equipo.idArea) %>
+      <%= form.select(:idArea, opciones,{},{class:"form-control"} ) %>
+    </div>
 
-  <div class="field row col-sm-4">
-    <%= form.label :idTipoEquipo, "Tipo" %>
-    <%= form.number_field :idTipoEquipo, id: :equipo_idTipoEquipo ,class:"form-control"%>
-  </div>
+    <div class="field row col-sm-4" hidden>
+      <%= form.label :eliminado %>
+      <%= form.text_field :eliminado, id: :equipo_eliminado ,class:"form-control", :value => 0%>
+    </div>
 
-  <div class="field row col-sm-4">
-    <%= form.label :idArea, "Area" %>
-    <%= form.number_field :idArea, id: :equipo_idArea ,class:"form-control"%>
-  </div>
-
-  <div class="field row col-sm-4" hidden>
-    <%= form.label :eliminado %>
-    <%= form.text_field :eliminado, id: :equipo_eliminado ,class:"form-control", :value => 0%>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Guardar", :class=>"btn btn-success" %>
-  </div>
+    <div class="actions">
+      <%= form.submit "Guardar", :class=>"btn btn-success" %>
+    </div>
 <% end %>

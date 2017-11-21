@@ -11,3 +11,11 @@
 .division{
 	border-color:red
 }
+
+a{
+  color: #000;
+  &:hover{
+    text-decoration: none;
+    color: #4d4d4d;
+  }
+}

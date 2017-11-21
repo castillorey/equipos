@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171119043926) do
+ActiveRecord::Schema.define(version: 20171121031050) do
 
   create_table "anexos", force: :cascade do |t|
     t.integer "idTipoAnexo"
@@ -91,6 +91,21 @@ ActiveRecord::Schema.define(version: 20171119043926) do
     t.string "atributo"
     t.string "descripcion"
     t.string "estadoParametro"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "personas", force: :cascade do |t|
+    t.string "nombres"
+    t.string "apellidos"
+    t.string "identificacion"
+    t.string "correo"
+    t.integer "idEstadoPersona"
+    t.integer "idTipoPersona"
+    t.integer "idArea"
+    t.integer "idCargo"
+    t.integer "idTipoIdentificacion"
+    t.binary "eliminado"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
